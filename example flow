@@ -1,0 +1,188 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<flow xmlns="urn:opendaylight:flow:inventory">
+   <strict>false</strict>
+   <table_id>0</table_id>
+   <id>1</id>
+   
+   <match>
+      <ethernet-match>
+         <ethernet-type>
+            <type>0x0800</type>
+         </ethernet-type>
+      </ethernet-match>
+      <vlan-match>
+         <vlan-id>
+            <vlan-id>20</vlan-id>
+            <vlan-id-present>true</vlan-id-present>
+         </vlan-id>
+      </vlan-match>
+      <ipv4-source>172.16.0.10/32</ipv4-source>
+   </match>
+   
+   <cookie>1</cookie>
+   <flow-name>Flow1_1</flow-name>
+   <priority>2</priority>
+   <barrier>false</barrier>
+
+   <instructions>
+      <instruction>
+         <order>0</order>
+         <apply-actions>
+            <action>
+               <order>1</order>
+               <set-dl-dst-action>
+                  <address>00:0C:29:70:F5:A4</address>
+               </set-dl-dst-action>
+            </action>
+            <action>
+               <order>0</order>
+               <set-vlan-id-action>
+                  <vlan-id>10</vlan-id>
+               </set-vlan-id-action>
+            </action>
+         </apply-actions>
+      </instruction>
+   </instructions>
+</flow>
+
+
+<action>
+   <order>2</order>
+   <output-action>
+      <output-node-connector>openflow:106225800878336:4</output-node-connector>
+   </output-action>
+</action>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<flow xmlns="urn:opendaylight:flow:inventory">
+   <strict>false</strict>
+   <table_id>0</table_id>
+   <id>1</id>
+   
+   <match>
+      <ethernet-match>
+         <ethernet-type>
+            <type>0x0800</type>
+         </ethernet-type>
+      </ethernet-match>
+      <vlan-match>
+      <vlan-id>
+         <vlan-id-present>false</vlan-id-present>
+      </vlan-id>
+     </vlan-match>
+      <ipv4-source>172.16.0.10/32</ipv4-source>
+      <ip-match>
+          <ip-protocol>6</ip-protocol>
+      </ip-match>
+      <tcp-destination-port>80</tcp-destination-port>
+   </match>
+   
+   <cookie>1</cookie>
+   <flow-name>Flow1_1</flow-name>
+   <priority>2</priority>
+   <barrier>false</barrier>
+
+   <instructions>
+      <instruction>
+         <order>0</order>
+         <apply-actions>
+            <action>
+               <order>1</order>
+               <set-dl-dst-action>
+                  <address>00:0C:29:70:F5:A4</address>
+               </set-dl-dst-action>
+            </action>
+            <action>
+            <order>0</order>
+            <output-action>
+               <output-node-connector>openflow:106225800878336:19</output-node-connector>
+            </output-action>
+         </action>
+         </apply-actions>
+      </instruction>
+   </instructions>
+</flow>
+
+<action>
+   <order>1</order>
+   <set-nw-dst-action>
+      <ipv4-address>172.16.0.10/32</ipv4-address>
+   </set-nw-dst-action>
+</action>
+
+
+
+
+
+
+
+
+
+
+
+
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<flow xmlns="urn:opendaylight:flow:inventory">
+   <strict>false</strict>
+   <table_id>0</table_id>
+   <id>1</id>
+   
+   <match>
+      <ethernet-match>
+         <ethernet-type>
+            <type>0x0800</type>
+         </ethernet-type>
+      </ethernet-match>
+      <vlan-match>
+      <vlan-id>
+         <vlan-id-present>false</vlan-id-present>
+      </vlan-id>
+     </vlan-match>
+      <ipv4-source>172.16.0.10/32</ipv4-source>
+      <ip-match>
+          <ip-protocol>6</ip-protocol>
+      </ip-match>
+      <tcp-destination-port>80</tcp-destination-port>
+   </match>
+   
+   <cookie>1</cookie>
+   <flow-name>Flow1_1</flow-name>
+   <priority>2</priority>
+   <barrier>false</barrier>
+
+   <instructions>
+      <instruction>
+         <order>0</order>
+         <apply-actions>
+            <action>
+               <order>1</order>
+               <set-dl-dst-action>
+                  <address>00:0C:29:70:F5:A4</address>
+               </set-dl-dst-action>
+            </action>
+            <action>
+            <order>0</order>
+            <output-action>
+               <output-node-connector>openflow:106225800878336:19</output-node-connector>
+            </output-action>
+         </action>
+         </apply-actions>
+      </instruction>
+   </instructions>
+</flow>
